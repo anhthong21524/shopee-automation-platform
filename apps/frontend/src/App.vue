@@ -49,6 +49,10 @@ body,
   min-height: 100%;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   font-family: Inter, "Segoe UI", sans-serif;
