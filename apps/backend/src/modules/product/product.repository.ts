@@ -11,6 +11,10 @@ export class ProductRepository {
   ) {}
 
   async upsertMany(candidates: ProductCandidate[]): Promise<void> {
+    if (candidates.length === 0) {
+      return;
+    }
+
     const ops = candidates.map((c) => ({
       updateOne: {
         filter: { url: c.url },

@@ -13,11 +13,13 @@ export class SearchService {
   ) {}
 
   async searchProducts(keyword: string, limit: number): Promise<SearchResponse> {
-    const crawlResult = await this.crawler.crawlSearchPage(keyword);
+    const crawlResult = await this.crawler.crawlSearchPage(keyword, limit);
     const candidates: ProductCandidate[] = this.parser.parseProducts(crawlResult, keyword);
     const limited = candidates.slice(0, limit);
 
-    await this.productRepo.upsertMany(limited);
+    if (limited.length > 0) {
+      await this.productRepo.upsertMany(limited);
+    }
 
     return { keyword, total: limited.length, products: limited };
   }

@@ -50,8 +50,8 @@ defineProps<{
 
 .product-list__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
 }
 
 @media (max-width: 1100px) {
@@ -67,6 +67,7 @@ defineProps<{
 
   .product-list__grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 </style>

@@ -33,6 +33,8 @@ Edit `apps/backend/.env` and set:
 ```env
 MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/shopee-automation
 PORT=3001
+# Optional fallback if Shopee blocks anonymous headless crawling
+SHOPEE_COOKIES=[{"name":"SPC_EC","value":"YOUR_VALUE","domain":".shopee.vn","path":"/"}]
 ```
 
 ### 3. Start the application

@@ -106,8 +106,9 @@ describe('SearchView', () => {
     await new Promise((resolve) => setTimeout(resolve, 650));
     await flushPromises();
 
-    expect(wrapper.text()).toContain('3 products found');
+    expect(wrapper.text()).toContain('4 products found');
     expect(wrapper.text()).toContain('Wireless Earbuds Pro');
+    expect(wrapper.text()).toContain('Portable Bluetooth Speaker');
     expect(wrapper.text()).toContain('View on Shopee');
   });
 
